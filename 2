@@ -1,4 +1,4 @@
-from stats import word_count, number_of_characters, chars_dict_to_sorted_list
+from stats import word_count, number_of_characters
 
 path = "books/frankenstein.txt"
 
@@ -9,20 +9,19 @@ def get_book_text(path):
     return printed_book
 
 
+def sort_on(char_count):
+    return char_count["num"]
+
+
 def main():
     printed_book = get_book_text(path)
     total_words = word_count(printed_book)
     count = number_of_characters(printed_book)
     print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {path}...")
+    print(f"Analyzing book found at {path}")
     print("----------- Word Count ----------")
     print(f"Found {total_words} total words")
     print("--------- Character Count -------")
-    sorted_chars = chars_dict_to_sorted_list(count)
-    for entry in sorted_chars:
-        if entry["char"].isalpha():
-            print(f"{entry['char']}: {entry['num']}")
-    print("============= END ===============")
 
 
 main()
