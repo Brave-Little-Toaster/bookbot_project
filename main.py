@@ -1,6 +1,11 @@
 from stats import word_count, number_of_characters, chars_dict_to_sorted_list
+import sys
 
-path = "books/frankenstein.txt"
+
+print("Usage: python3 main.py <path_to_book>")
+
+args = sys.argv
+path = args[1]
 
 
 def get_book_text(path):
